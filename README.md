@@ -35,4 +35,3 @@ Optional tuning: `--denoise 2 --clahe 1.0 --sharpen 0.8` (0 switches a step off)
 ## Files
 `enhance.py` enhancement CLI | `evaluate.py` evaluation CLI | `make_figures.py` grid and
 failure crops | `download_model.py` model fetch | `WRITEUP.md` one-page write-up
-Note: the exercise brief mentions 20 tiles, but the provided data/ folder contains 24 tiles. All 24 are used in evaluation, and the results reflect all of them.
