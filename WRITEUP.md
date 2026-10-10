@@ -20,6 +20,5 @@ Cause: local contrast exaggerates small differences, and sharpening adds halos.
 
 ## 4. 50,000 tiles per day
 Denoising is ~95% of the cost (~0.3 s per ~0.15 MP crop on my CPU; roughly 0.8 s for 640x640), so about 11 CPU-hours a day and it falls behind at peaks. I would use a queue with parallel workers, replace non-local means with a bilateral filter, drop CLAHE, and cache by tile hash. Google quota/cost and I/O come next. I would track quality with the no-reference metrics.
-
 ## 5. Google Maps Platform Terms of Service
 As I read the Terms, Section 3.2.1 restricts copying, modifying and creating derivative works of the Services, and the Service Specific Terms allow caching only for listed content types and for limited periods, so Google imagery is not freely storable. Storing enhanced tiles in our own database and showing them in our product would mean storing Google content and also modifying it, so I expect it to conflict with these terms. We should not do this with Google imagery without written permission from Google. Safer options are to show imagery live through Google's own services, unmodified and with Google's attribution, or to license imagery whose terms allow storage and enhancement. Legal should confirm this against the current Terms and the caching rules for the specific API before we build anything.
